@@ -1,0 +1,83 @@
+:root{
+  --bg:#eaf7f0; /* pale mint page background */
+  --card:#ffffff;
+  --muted:#6b6b6b;
+  --input-border:#e6e6e6;
+  --accent:#0b7a58; /* deep green */
+  --accent-dark:#0a6b4f;
+  --radius:10px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  display:grid;
+  place-items:center;
+  padding:40px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.card{
+  width:760px;
+  max-width:95vw;
+  background:var(--card);
+  border-radius:14px;
+  padding:28px 36px;
+  box-shadow:0 8px 24px rgba(17,24,39,0.06);
+  border:1px solid rgba(10,10,10,0.02);
+}
+.title{
+  font-size:20px;
+  font-weight:700;
+  color:#1f2937;
+  margin:0 0 18px 0;
+}
+form .row{display:flex;gap:16px;}
+.field{
+  display:flex;flex-direction:column;margin-bottom:18px;width:100%;
+}
+label{
+  font-size:12px;color:var(--muted);margin-bottom:8px;display:block;
+}
+input[type="text"], input[type="email"], textarea{
+  height:40px;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--input-border);
+  outline:none;
+  font-size:14px;color:#111827;background:#fff;
+  box-sizing:border-box;
+}
+textarea{min-height:90px;resize:vertical;padding-top:12px}
+input:focus, textarea:focus{box-shadow:0 0 0 4px rgba(11,122,88,0.06);border-color:var(--accent)}
+
+/* Query type pills */
+.query-pills{
+  display:flex;gap:12px;align-items:center;margin-top:6px;
+}
+.pill{
+  display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:8px;border:1px solid var(--input-border);min-width:180px;cursor:pointer;background:#fff;
+}
+.pill input{appearance:none;display:inline-block;width:18px;height:18px;border-radius:50%;border:1px solid #cbd5e1;background:#fff;margin:0}
+.pill input:checked{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px rgba(11,122,88,0.08)}
+.pill .label{font-size:14px;color:#374151}
+
+/* consent + submit */
+.consent{display:flex;align-items:center;gap:10px;margin:12px 0 18px 0;color:var(--muted);font-size:13px}
+.consent input{width:16px;height:16px}
+
+.submit{
+  width:100%;background:var(--accent);color:#fff;border:none;padding:12px 18px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,0.03);
+}
+.submit:active{transform:translateY(1px)}
+
+/* small helper to match spacing like image */
+.spacer{height:8px}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .row{flex-direction:column}
+  .pill{min-width:120px;padding:10px}
+  .card{padding:20px}
+}
